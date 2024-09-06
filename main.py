@@ -17,13 +17,13 @@ def display():
 def add(item):
     if item:
         st.session_state.grocery_list.append(item)
-        st.success(f"'{item}' has been added to the list.")
+        st.success(f"'{item}' has been added to your list.")
 
 # Function to remove an item from the grocery list
 def remove(item):
     if item in st.session_state.grocery_list:
         st.session_state.grocery_list.remove(item)
-        st.success(f"'{item}' has been removed from the list.")
+        st.success(f"'{item}' has been removed from your list.")
     else:
         st.error(f"'{item}' is not in the list.")
 
@@ -34,13 +34,13 @@ st.subheader("Add or Remove Items")
 
 # Add an item to the grocery list
 add_item = st.text_input("Enter an item to add", key="add_item")
-if st.button("Add Item"):
+if st.button("Add item to your list"):
     add(add_item)
     display()
 
 # Remove an item from the grocery list
 remove_item = st.text_input("Enter an item to remove", key="remove_item")
-if st.button("Remove Item"):
+if st.button("Remove item to your list"):
     remove(remove_item)
     display()
 
